@@ -18,15 +18,6 @@ button.addEventListener("click", function () {
 // This function is for proceed button
 proceed.addEventListener("click", function () {
 
-    //Inserting the professor 
-    // var professorImage = document.createElement("img");
-    // professorImage.src = "components/Characters/professor-jean.jpg"
-    // professorImage.style.width = "30%"
-    // professorImage.style.height = "100%"
-    // professorImage.style.margin = "auto"
-    // overlay.appendChild(professorImage)
-
-
     intro.textContent = "Hello adventurer!, I am professor Sam. And I will guide you in your pokemon adventure, But before that, please do tell me your name";
     overlay.removeChild(button);
 
@@ -48,7 +39,9 @@ proceed.addEventListener("click", function () {
     
     overlay.appendChild(nameSubmit);
     overlay.removeChild(proceed);
-    
+
+    ///
+
     nameSubmit.addEventListener("click", function validation () {
         var userName = nameInput.value;
         if (userName == '') {
@@ -67,12 +60,14 @@ proceed.addEventListener("click", function () {
             
             var yesButton = document.createElement("button") ;
             overlay.appendChild(yesButton)
-            yesButton.classList.add("yes-button");
+            yesButton.classList.add("yesButton");
 
             yesButton.textContent = "Yes it is!"
             yesButton.style.margin = "auto"
             yesButton.style.width = "50%"
             yesButton.style.height = "5vh"
+            
+            ///
 
             yesButton.addEventListener("click", function () {
                 intro.textContent = " Hello adventurer " + userName + "!";
@@ -94,6 +89,22 @@ proceed.addEventListener("click", function () {
                 overlay.appendChild(mainIntro)
                 overlay.appendChild(gameStart)
               
+
+                ///////HANGGANG DITO MUNA PQIGNWEKJGWLKEJG
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 gameStart.addEventListener("click", function () {
                     overlay.style.backgroundColor = "red"
                     overlay.style.color = "white"
@@ -101,8 +112,91 @@ proceed.addEventListener("click", function () {
                     intro.textContent = "Please agreee to the terms and conditions for this shitbox";
                     mainIntro.textContent = "And this is where we input the things that we need"
                     gameStart.textContent = "I agree!";
+                    overlay.removeChild(gameStart);
+                    var goButton = document.createElement("button");
+                    goButton.textContent = "I agree!!";
+                    goButton.style.padding = "10px 20px";
+                    overlay.appendChild(goButton);
+
+                    goButton.addEventListener("click", function() {
+                        overlay.style.opacity ="0";
+
+                       setTimeout(function ()  {
+                        overlay.style.opacity = "100%";
+                        overlay.textContent = " The game is loading";
+                        overlay.style.color = "black"
+                        overlay.style.background = "rgba(150, 145, 95, 0.14)";
+                       
+
+                        setTimeout(function () {
+                            overlay.style.opacity = "0";
+                            overlay.style.opacity = "100%"
+                            
+                        }, 3000) 
+
+                            overlay.style.height = "30vh";
+                            overlay.textContent = "Welcome to Pallet Town";
+                            overlay.style.background = "rgba(150, 145, 95, 0.8)";
+                            var home = document.createElement("textarea")
+                            var inside = document.createElement("button");
+                            var outside = document.createElement("button");
+                            var buttonContainer = document.createElement("div")
+                            
+                            overlay.appendChild(home);
+
+                            home.textContent = "You are in your home town, and suddenly a HUGE Erruption bang comming from volcano. What do you do? "
+                            home.style.padding = "20px";
+                            home.style.marginTop = "1%";
+                            home.readOnly = true;
+
+                            overlay.appendChild(buttonContainer);
+                            buttonContainer.style.width = "80%";
+                            buttonContainer.style.height = "auto";
+                            buttonContainer.style.display = "flex";
+                            buttonContainer.style.flexDirection = "row";
+                            buttonContainer.style.margin = "auto";
+
+
+                            buttonContainer.appendChild(inside);
+                            inside.textContent = "Stay inside!";
+                            inside.style.padding = "10px 30px";
+                           
+                            buttonContainer.appendChild(outside);
+                            outside.textContent = "Rush outside!";
+                            outside.style.padding = "10px 30px";
+
+                            outside.addEventListener("click", function () {
+                        
+                                home.textContent = "You are now outside, you see a mysterious black dragon pokemon. The dragon pokemon immediately noticed your presence. What do you do?";
+                                buttonContainer.removeChild(outside);
+                                buttonContainer.removeChild(inside);  
+
+
+                                var pokeball = document.createElement("button");
+                                var run = document.createElement("button");
+
+                                buttonContainer.appendChild(pokeball);
+                                pokeball.textContent = "Throw a pokeball"
+                                pokeball.style.padding = "10px 30px";
+
+                                buttonContainer.appendChild(run);
+                                run.textContent = "Run away"
+                                run.style.padding = "10px 30px";
+
+                                    });
+
+                            
+                    
+                       }, 2000);
+                        
+                    })
                 })
             })
+
+           
+
+
+
         }
 
         
@@ -112,6 +206,15 @@ proceed.addEventListener("click", function () {
 } )
 
 
+
+// function insideButton () {
+//     overlay.style.opacity = "0%";
+//     setInterval ( function() {
+//         overlay.style.opacity = "100%";
+//         home.textContent = "You stayed inside, your house fell apart."
+
+//     },2000)
+// }
 
 
 // How to call this function? here ya go
