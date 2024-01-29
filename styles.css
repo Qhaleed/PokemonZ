@@ -81,6 +81,7 @@ button {
 
 button:hover {
     cursor: pointer;
+    transform: scale(1.01)
 }
 /* This is where I put the js to css styles */
 
@@ -90,5 +91,11 @@ button:hover {
 }
 .yesButton {
     margin-top: 300px;
-    background-color: red;
+    
+    
+}
+/* This is for the pallet town stage */
+.stage1 {
+    background-color: beige;
+    
 }
